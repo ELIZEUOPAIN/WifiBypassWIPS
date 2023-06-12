@@ -2,7 +2,7 @@
 
 Sabemos como é essencial capturar o handshake durante o Pentest em Redes Wireless, geralmente usamos ataques de Deauth para fazermos o cliente se reconectar na rede alvo,e quando o fizer capturamos o handshake, mas os roteadores modernos têm WIPS (Wireless Intrusion Prevention System) que verificam a quantidade de Deauth enviados antes de desautenticar o cliente e quando percebe o excesso de requisições Deauth bloqueia o MAC Adress do atacante.
 
-O script tem como objetivo inicial o ataque DoS (Negação de Serviço) em Redes Wifi com WIPS ( Wireless Intrusion Prevention System ) ativo, mas também pode ser usado para capturar o handshake das conexões.
+O script tem como objetivo burlar o WIPS ( Wireless Intrusion Prevention System ) e capturar o handshake da conexão.
 
 Use-o apenas em ambientes permitidos e/ou ambientes controlados!
 
