@@ -1,6 +1,6 @@
 # Bypass de Wifi com WIPS ativo
 
-Sabemos como é essencial capturar o handshake durante o Pentest em Rede Wireless, geralmente usamos ataques de Deauth para fazermos o cliente se reconectar na rede alvo,e quando o fizer capturamos o handshake, mas os Firewalls modernos tem WIPS (Wireless Intrusion Prevention System) que verificam a quantidade de Deauth enviados antes de desautenticar o cliente.
+Sabemos como é essencial capturar o handshake durante o Pentest em Rede Wireless, geralmente usamos ataques de Deauth para fazermos o cliente se reconectar na rede alvo,e quando o fizer capturamos o handshake, mas os roteadores modernos tem WIPS (Wireless Intrusion Prevention System) que verificam a quantidade de Deauth enviados antes de desautenticar o cliente.
 
 O script tem como objetivo inicial o ataque DoS (Negação de Serviço) em Rede Wifi com WIPS ( Wireless Intrusion Prevention System ) ativo, mas pode ser usado para capturar o handshake das conexões.
 
