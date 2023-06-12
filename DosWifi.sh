@@ -4,7 +4,7 @@ if ["$1" == ""]
 then
 	echo "ELIZEUOPAIN - DoS Wifi - Bypass WIPS"
 	echo "Modo de uso: $0 interface(wlan1) canal(6) BSSID(MAC Adress Alvo)"
-	echo "Exemplo: $0 wlan1mon 6 FF:GG:BB:CC:AA"
+	echo "Exemplo: $0 wlan1mon 6 FF:GG:BB:CC:AA:ZZ"
 
 while true
 do
